@@ -38,7 +38,7 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
+        /* Fixed Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -99,7 +99,7 @@
             color: var(--bg-color);
         }
 
-        /* Page Layout Views */
+        /* Page Layout Handling Views */
         .page-view {
             display: none;
         }
@@ -108,7 +108,7 @@
             display: block;
         }
 
-        /* Sections */
+        /* Standard Container Layout */
         section {
             padding: 6rem 2rem 2rem 2rem;
             min-height: 100vh;
@@ -119,7 +119,7 @@
             margin: 0 auto;
         }
 
-        /* Hero Section */
+        /* Hero Setup */
         .hero {
             text-align: center;
         }
@@ -158,10 +158,10 @@
             transform: translateY(-3px);
         }
 
-        /* Grid Layouts */
+        /* Dual/Multi Column Flex Responsive Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -187,7 +187,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Meme Specific Styling */
+        /* Dedicated Meme Layout Properties */
         .meme-header {
             text-align: center;
             margin-bottom: 2rem;
@@ -200,12 +200,12 @@
 
         .meme-card {
             border: 2px dashed var(--meme-accent);
-            background-color: rgba(30, 41, 59, 0.5);
+            background-color: rgba(30, 41, 59, 0.4);
         }
 
         .meme-image-container {
             width: 100%;
-            height: 220px;
+            height: 240px;
             margin-top: 1rem;
             border-radius: 6px;
             overflow: hidden;
@@ -226,8 +226,8 @@
             color: #fff;
             font-weight: bold;
             text-align: center;
-            padding: 0.5rem;
-            font-size: 0.9rem;
+            padding: 0.6rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             border-top: 2px solid var(--meme-accent);
@@ -251,24 +251,24 @@
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- Unified Page Navigation -->
     <nav>
         <div class="logo">Prajit T.</div>
         <ul class="nav-links">
             <li><a onclick="switchPage('portfolio')" id="tab-portfolio" class="active">Portfolio</a></li>
-            <li><a onclick="switchPage('memes')" id="tab-memes" class="meme-tab-link">📅 IEEE Gitronix Diaris</a></li>
+            <li><a onclick="switchPage('memes')" id="tab-memes" class="meme-tab-link">🔥 IEEE Gitronix Diaris</a></li>
             <li><button class="theme-toggle" id="themeBtn">Toggle Mode</button></li>
         </ul>
     </nav>
 
-    <!-- VIEW 1: MAIN PORTFOLIO PAGE -->
+    <!-- SECTION VIEW 1: DYNAMIC CORE PORTFOLIO -->
     <div id="page-portfolio" class="page-view active-view">
         <!-- Home / Hero Section -->
         <section id="home" class="hero">
             <h1>Hi, I am <span>Prajit T</span></h1>
             <h2>B.E. Computer Science and Engineering Student</h2>
             <p>Aspiring Developer | Tech Enthusiast | Student at KPRIET</p>
-            <button onclick="switchPage('memes')" class="btn" style="background-color: var(--meme-accent);">Check Out Gitronix Memes ➔</button>
+            <button onclick="switchPage('memes')" class="btn" style="background-color: var(--meme-accent); color:#000;">Enter IEEE Meme Vault ➔</button>
         </section>
 
         <!-- About Section -->
@@ -299,25 +299,24 @@
         </section>
     </div>
 
-    <!-- VIEW 2: IEEE GITRONIX MEME PAGE -->
+    <!-- SECTION VIEW 2: INTEGRATED MEME WORKSPACE -->
     <div id="page-memes" class="page-view">
         <section id="gitronix-memes">
             <div class="meme-header">
-                <h1>IEEE Gitronix Workshop Chronicle</h1>
-                <p>KPRIET Culturals & Conference Backstage Content (Based on True Events) 🥲</p>
+                <h1>The IEEE Gitronix Lore</h1>
+                <p>A Legendary Tale of Debates, Rejections, GPay Tragedies, and Unopened Books 🥲</p>
             </div>
 
+            <!-- Complete 6-Card Extended Meme Archive -->
             <div class="grid">
-                <!-- Meme 1: The Debate Rejection -->
+                
+                <!-- 1. The Debate Rejection -->
                 <div class="card meme-card">
                     <div>
-                        <h3>1. The "Money Buy Happiness" Trap</h3>
-                        <p><strong>The Incident:</strong> Our Sir boldly stood up at the IEEE Gitronix debate to argue that <em>"Money can buy happiness"</em>. Instead of winning the trophy, he got brutally rejected right on the spot by his crush!</p>
+                        <h3>1. The "Money Buys Happiness" Statement</h3>
+                        <p><strong>The Incident:</strong> Sir boldly went on stage during the IEEE debate to prove that money can buy happiness. He expected applause, but his crush flat-out rejected him right after his speech.</p>
                     </div>
                     <div>
                         <div class="meme-image-container">
-                            <!-- Santhanam Clapping Mockingly template reference -->
-                            <img src="https://mokkapostu.com" onerror="this.src='https://unsplash.com'" alt="Santhanam Reaction">
+                            <img src="https://mokkapostu.com" onerror="this.src='https://unsplash.com'" alt="Santhanam Clapping">
                         </div>
-                        <div class="meme-caption">Crush: Debate mudinjala? Kelambu kelambu!</div>
-                    </div>
