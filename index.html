@@ -74,11 +74,11 @@
             cursor: pointer;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover {
             color: var(--accent-color);
         }
 
-        .nav-links a.meme-tab-link {
+        .nav-links a.meme-nav-link {
             color: var(--meme-accent);
             font-weight: bold;
         }
@@ -97,15 +97,6 @@
         .theme-toggle:hover {
             background-color: var(--accent-color);
             color: var(--bg-color);
-        }
-
-        /* Page Layout Handling Views */
-        .page-view {
-            display: none;
-        }
-
-        .page-view.active-view {
-            display: block;
         }
 
         /* Standard Container Layout */
@@ -142,8 +133,8 @@
 
         .btn {
             display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--bg-color);
+            background-color: var(--meme-accent);
+            color: #000;
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
             text-decoration: none;
@@ -158,7 +149,7 @@
             transform: translateY(-3px);
         }
 
-        /* Dual/Multi Column Flex Responsive Grid */
+        /* Grid Layout */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -187,20 +178,25 @@
             margin-bottom: 1rem;
         }
 
-        /* Dedicated Meme Layout Properties */
+        /* Dedicated Meme Cards Styling */
         .meme-header {
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        .meme-header h1 {
+        .meme-header h2 {
             color: var(--meme-accent);
-            font-size: 3rem;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
         }
 
         .meme-card {
             border: 2px dashed var(--meme-accent);
             background-color: rgba(30, 41, 59, 0.4);
+        }
+
+        .meme-card h3 {
+            color: var(--meme-accent);
         }
 
         .meme-image-container {
@@ -251,72 +247,80 @@
 </head>
 <body>
 
-    <!-- Unified Page Navigation -->
+    <!-- Unified Single Page Navigation -->
     <nav>
         <div class="logo">Prajit T.</div>
         <ul class="nav-links">
-            <li><a onclick="switchPage('portfolio')" id="tab-portfolio" class="active">Portfolio</a></li>
-            <li><a onclick="switchPage('memes')" id="tab-memes" class="meme-tab-link">🔥 IEEE Gitronix Diaris</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#gitronix-memes" class="meme-nav-link">🔥 IEEE Gitronix Diaris</a></li>
             <li><button class="theme-toggle" id="themeBtn">Toggle Mode</button></li>
         </ul>
     </nav>
 
-    <!-- SECTION VIEW 1: DYNAMIC CORE PORTFOLIO -->
-    <div id="page-portfolio" class="page-view active-view">
-        <!-- Home / Hero Section -->
-        <section id="home" class="hero">
-            <h1>Hi, I am <span>Prajit T</span></h1>
-            <h2>B.E. Computer Science and Engineering Student</h2>
-            <p>Aspiring Developer | Tech Enthusiast | Student at KPRIET</p>
-            <button onclick="switchPage('memes')" class="btn" style="background-color: var(--meme-accent); color:#000;">Enter IEEE Meme Vault ➔</button>
-        </section>
+    <!-- 1. Home / Hero Section -->
+    <section id="home" class="hero">
+        <h1>Hi, I am <span>Prajit T</span></h1>
+        <h2>B.E. Computer Science and Engineering Student</h2>
+        <p>Aspiring Developer | Tech Enthusiast | Student at KPRIET</p>
+        <a href="#gitronix-memes" class="btn">Scroll Down to Meme Vault ➔</a>
+    </section>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="card" style="margin-top: 2rem;">
-                <p>I am a passionate **CSE fresher** pursuing my Bachelor of Engineering degree at **KPR Institute of Engineering and Technology (KPRIET)**. I love solving algorithmic logic puzzles and building foundational software applications. Currently, I am expanding my development workflow toolkit by mastering version control systems.</p>
+    <!-- 2. About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="card" style="margin-top: 2rem;">
+            <p>I am a passionate **CSE fresher** pursuing my Bachelor of Engineering degree at **KPR Institute of Engineering and Technology (KPRIET)**. I love solving algorithmic logic puzzles and building foundational software applications. Currently, I am expanding my development workflow toolkit by mastering version control systems.</p>
+        </div>
+    </section>
+
+    <!-- 3. Skills Section -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Languages</h3>
+                <p>Python (Basics), C, C++</p>
             </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Languages</h3>
-                    <p>Python (Basics), C, C++</p>
-                </div>
-                <div class="card">
-                    <h3>Developer Tools</h3>
-                    <p>Git, GitHub, VS Code</p>
-                </div>
-                <div class="card">
-                    <h3>Web Development</h3>
-                    <p>HTML5, CSS3 (Learning)</p>
-                </div>
+            <div class="card">
+                <h3>Developer Tools</h3>
+                <p>Git, GitHub, VS Code</p>
             </div>
-        </section>
-    </div>
-
-    <!-- SECTION VIEW 2: INTEGRATED MEME WORKSPACE -->
-    <div id="page-memes" class="page-view">
-        <section id="gitronix-memes">
-            <div class="meme-header">
-                <h1>The IEEE Gitronix Lore</h1>
-                <p>A Legendary Tale of Debates, Rejections, GPay Tragedies, and Unopened Books 🥲</p>
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>HTML5, CSS3 (Learning)</p>
             </div>
+        </div>
+    </section>
 
-            <!-- Complete 6-Card Extended Meme Archive -->
-            <div class="grid">
-                
-                <!-- 1. The Debate Rejection -->
-                <div class="card meme-card">
-                    <div>
-                        <h3>1. The "Money Buys Happiness" Statement</h3>
-                        <p><strong>The Incident:</strong> Sir boldly went on stage during the IEEE debate to prove that money can buy happiness. He expected applause, but his crush flat-out rejected him right after his speech.</p>
+    <!-- 4. INTEGRATED MEME WORKSPACE (Right inside the continuous page layout) -->
+    <section id="gitronix-memes">
+        <div class="meme-header">
+            <h2>The IEEE Gitronix Lore</h2>
+            <p>A Legendary Continuous Tale of Debates, Rejections, GPay Tragedies, and Unopened Books 🥲</p>
+        </div>
+
+        <div class="grid">
+            
+            <!-- Card 1: The Debate Rejection -->
+            <div class="card meme-card">
+                <div>
+                    <h3>1. The "Money Buys Happiness" Speech</h3>
+                    <p><strong>The Incident:</strong> Sir boldly went on stage during the IEEE debate to prove that money can buy happiness. Instead of applause, he got a brutal on-the-spot rejection from his crush.</p>
+                </div>
+                <div>
+                    <div class="meme-image-container">
+                        <img src="https://mokkapostu.com" onerror="this.src='https://unsplash.com'" alt="Santhanam Clapping">
                     </div>
-                    <div>
-                        <div class="meme-image-container">
-                            <img src="https://mokkapostu.com" onerror="this.src='https://unsplash.com'" alt="Santhanam Clapping">
-                        </div>
+                    <div class="meme-caption">Crush: "Nee pesuna pechuku unaku idhu thevada!"</div>
+                </div>
+            </div>
+
+            <!-- Card 2: The Premium Request Strike -->
+            <div class="card meme-card">
+                <div>
+                    <h3>2. The ₹9999 GPay Request</h3>
+                    <p><strong>The Incident:</strong> Instead of dropping it, a risky collect request of ₹9,999 was pushed right into her payment terminal to check if money could buy happiness.</p>
+                </div>
+                <div>
